@@ -1,0 +1,181 @@
+header{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: white;
+    nav{
+        padding: 35px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            .image{
+                width: 200px;
+                height: 63px;
+            }
+            p{
+                color: #303030;
+                font-size: 0.8em;
+                width: 277px;
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            h3{
+                color: #303030;
+                font-size: 1em;
+                font-weight: 700;
+            }
+        }
+        menu{
+            display: none;
+            gap: 10px;
+            i{
+                font-size: 22px;
+                padding: 14px;
+                color: #273895;
+                border-radius: 7px;
+                background: #DEE6EF;
+                transition: 0.3s ease-out;
+                &:hover{
+                    background-color: #273895;
+                    color: white;
+                }
+            }
+            input{
+                display: none;
+                &:checked ~ label{
+                    &:nth-of-type(1){
+                        display: none;
+                    }
+                    &:nth-of-type(2){
+                        display: flex;
+                    }
+                }
+                &:checked ~ .menu-left{
+                    left: 0;
+                    box-shadow: 0 800px 0 800px #27389530;
+                }
+            }
+            label{
+                &:nth-of-type(2){
+                    display: none;
+                }
+            }
+            .menu-left{
+                position: fixed;
+                left: -330px;
+                top: 100px;
+                width: 330px;
+                height: calc(100% - 100px);
+                background: #273895;
+                padding: 40px 6%;
+                transition: 0.3s ease-out;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    a{
+                        font-size: 1.3em;
+                        color: white;
+                    }
+                }
+                button{
+                    margin-top: 50px;
+                    &:hover{
+                        border: 2px solid #DEE6EF;
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        padding-bottom: 10px;
+        ul{
+            display: flex;
+            gap: 48px;
+        }
+        a{
+            color: #000000;
+            font-size: 1em;
+            &:hover{
+                color: #273895;
+            }
+        }
+    }
+    @media(max-width:1024px){
+        nav{
+            .logo{
+                gap: 20px;
+                p{
+                    width: 250px;
+                }
+            }
+            .right{
+                gap: 15px;
+            }
+        }
+        .bottom{
+            ul{
+                gap: 38px;
+            }
+        }
+    }
+    @media(max-width:860px){
+        nav{
+            .logo{
+                p{
+                    display: none;
+                }
+            }
+        }
+        .bottom{
+            ul{
+                gap: 30px;
+            }
+        }
+    }
+    @media(max-width:756px){
+        nav{
+            padding: 25px 6%;
+            menu{
+                display: flex;
+            }
+            .logo{
+                p{
+                    display: none;
+                }
+                .image{
+                    width: 140px;
+                    height: 44px;
+                }
+            }
+            .right{
+                h3{
+                    display: none;
+                }
+                &>button{
+                    display: none;
+                }
+            }
+        }
+        .bottom{
+            display: none;
+        }
+    }
+    @media(max-width:500px){
+        nav{
+            menu{
+                .menu-left{
+                    width: 100%;
+                    left: -500px;
+                }
+            }
+        }
+    }
+}
